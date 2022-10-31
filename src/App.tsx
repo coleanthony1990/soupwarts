@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Container from './components/Container';
-import SoupCard from './components/SoupCard';
+import HuffCard from './components/HuffCard';
 import './App.css';
 
 const App: React.FC = () => {
@@ -12,7 +12,7 @@ const App: React.FC = () => {
     <h1>Soupwarts</h1>
 
     <Route path="/" render={() => <Container />}/>
-    <SoupCard />
+    <HuffCard />
   </div>);
 };
 
