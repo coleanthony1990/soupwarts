@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Container from './components/Container';
 import './App.css';
-// import ravenclaw from './assets/ravenclaw.jpeg'
+import ravenclaw from './assets/ravenclaw.jpeg'
+import gryffindor from './assets/gryffindor.jpeg'
+import hufflepuff from './assets/hufflepuff.jpeg'
+import slytherin from './assets/slytherin.jpeg'
 
 const App: React.FC = () => {
-  // const [recipes, setRecipes] = useState<string[]>([]);
 
   return (
   <div>
@@ -13,16 +15,16 @@ const App: React.FC = () => {
 
     <Route path="/" render={() => <Container />}/>
     <Link to='/hufflepuff'>
-      <img src=''></img>
+      <img src={hufflepuff}></img>
     </Link>
     <Link to='/ravenclaw'>
-      <img src=''></img>
+      <img src={ravenclaw}></img>
     </Link>
     <Link to='/gryffindor'>
-      <div></div>
+      <img src={gryffindor}></img>
     </Link>
     <Link to='/slytherin'>
-      <div></div>
+      <img src={slytherin}></img>
     </Link>
   </div>);
 };
