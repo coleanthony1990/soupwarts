@@ -8,13 +8,12 @@ import './App.css';
 const App: React.FC = () => {
 
   return (
-    <div>
-      <h1>Soupwarts</h1>
-      <p>Pick your house and receive your soup recipe!</p>
-      <Route exact path="/" render={() => <Home />} />
-      <Route path="/" render={() => <SoupView />} />
-    </div>
-  );
+  <main className='main-container'>
+    <h1>SOUPWARTS</h1>
+    <p>Pick your house and receive your soup recipe!</p>
+    <Route exact path="/" render={() => <Home />} />
+    <Route path="/" render={() => <SoupView />} />
+  </main>);
 };
 
 export default App;
