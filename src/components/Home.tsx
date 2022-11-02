@@ -20,7 +20,6 @@ export default function Container() {
       <Link to='/slytherin'>
         <img src={slytherin} />
       </Link>
-  
     </div>
   )
 }

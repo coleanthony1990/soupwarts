@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { NavLink } from 'react-router-dom';
 
 type CardProps = {
   house: string
-}
+};
 
 type Recipe = {
   title: string;
@@ -32,7 +33,6 @@ export default function SoupCard(props: CardProps) {
       .then((res) => res.json())
       .then((data) => {
         setSoups(data)
-        
         setRandomSoup(data[Math.floor(Math.random() * (data.length + 1))]);
       })
       .catch((error) => console.log(error.message));
@@ -45,6 +45,7 @@ export default function SoupCard(props: CardProps) {
       <p>{randomSoup.servings}</p>
       <h3>Instructions: </h3>
       <p>{randomSoup.instructions}</p>
+      <NavLink to='/'>Return Home</NavLink>
     </div>
   );
 }
