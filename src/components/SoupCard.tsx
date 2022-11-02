@@ -12,7 +12,7 @@ type Recipe = {
   instructions: string;
 };
 
-export default function HuffCard(props: CardProps) {
+export default function SoupCard(props: CardProps) {
   const [soups, setSoups] = useState<Recipe[]>([]);
   const [randomSoup, setRandomSoup] = useState<Recipe>({
     title: '',
@@ -40,7 +40,7 @@ export default function HuffCard(props: CardProps) {
   }, []);
 
   return (
-    <div className="recipe-container">
+    <div className='recipe-container'>
       <h2>{randomSoup.title}</h2>
       <p>{randomSoup.ingredients}</p>
       <p>{randomSoup.servings}</p>
