@@ -21,7 +21,6 @@ export default function Container() {
       <Link to='/slytherin'>
         <img className='house-imgs' src={slytherin} />
       </Link>
-  
     </div>
   )
 }
