@@ -8,12 +8,12 @@ const App: React.FC = () => {
   // const [recipes, setRecipes] = useState<string[]>([]);
 
   return (
-  <div>
-    <h1>Soupwarts</h1>
+    <div>
+      <h1>Soupwarts</h1>
 
-    <Route path="/" render={() => <Container />}/>
-    <HuffCard />
-  </div>);
+      <Route path="/" render={() => <Container />} />
+    </div>
+  );
 };
 
 export default App;
