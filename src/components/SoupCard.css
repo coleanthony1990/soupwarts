@@ -1,0 +1,13 @@
+.recipe-container {
+  background-color: bisque;
+  color: black;
+  border: 8px solid black;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
