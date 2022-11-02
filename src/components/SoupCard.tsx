@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import './SoupCard.css';
 
 type CardProps = {
-  house: string
+  house: string;
 };
 
 type Recipe = {
@@ -22,8 +23,7 @@ export default function SoupCard(props: CardProps) {
   });
 
   useEffect(() => {
-    const url =
-      `https://api.api-ninjas.com/v1/recipe?query=${props.house}`;
+    const url = `https://api.api-ninjas.com/v1/recipe?query=${props.house}`;
     fetch(url, {
       method: 'GET',
       headers: {
@@ -32,20 +32,20 @@ export default function SoupCard(props: CardProps) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setSoups(data)
+        setSoups(data);
         setRandomSoup(data[Math.floor(Math.random() * (data.length + 1))]);
       })
       .catch((error) => console.log(error.message));
   }, []);
 
   return (
-    <div className='recipe-container'>
+    <div className="recipe-container">
       <h2>{randomSoup.title}</h2>
       <p>{randomSoup.ingredients}</p>
       <p>{randomSoup.servings}</p>
       <h3>Instructions: </h3>
       <p>{randomSoup.instructions}</p>
-      <NavLink to='/'>Return Home</NavLink>
+      <NavLink to="/">Return Home</NavLink>
     </div>
   );
 }
