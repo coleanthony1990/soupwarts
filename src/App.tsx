@@ -17,21 +17,12 @@ import LinkContainer from './components/LinkContainer';
 const App: React.FC = () => {
 
   return (
-<<<<<<< Updated upstream
   <main className='main-container'>
     <h1>SOUPWARTS</h1>
     <p>Pick your house and receive your soup recipe!</p>
     <Route exact path="/" render={() => <Home />} />
     <Route path="/" render={() => <SoupView />} />
   </main>);
-=======
-  <div>
-    <h1>Soupwarts</h1>
-    <Route path="/" render={() => <LinkContainer />}/>
-    <Route path="/" render={() => <Container />}/>
-    
-  </div>);
->>>>>>> Stashed changes
 };
 
 export default App;
