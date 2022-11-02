@@ -8,6 +8,8 @@ import './Home.css'
 
 export default function Container() {
   return (
+    <div>
+      <p>Pick your house and receive your soup recipe!</p>
     <div className='house-container'>
       <Link to='/hufflepuff'>
         <img className='house-imgs' src={hufflepuff} />
@@ -21,6 +23,7 @@ export default function Container() {
       <Link to='/slytherin'>
         <img className='house-imgs' src={slytherin} />
       </Link>
+    </div>
     </div>
   )
 }
