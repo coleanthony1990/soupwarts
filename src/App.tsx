@@ -1,17 +1,8 @@
-<<<<<<< Updated upstream
 import React, { useState } from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
 import SoupView from './components/SoupView';
 import './App.css';
-=======
-import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import Container from './components/Container';
-
-import './App.css';
-import LinkContainer from './components/LinkContainer';
->>>>>>> Stashed changes
 
 
 const App: React.FC = () => {
