@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 
+
+type CardProps = {
+  house: string
+}
+
 type Recipe = {
   title: string;
   ingredients: string;
@@ -7,7 +12,7 @@ type Recipe = {
   instructions: string;
 };
 
-export default function HuffCard() {
+export default function SoupCard(props: CardProps) {
   const [soups, setSoups] = useState<Recipe[]>([]);
   const [randomSoup, setRandomSoup] = useState<Recipe>({
     title: '',
@@ -18,7 +23,7 @@ export default function HuffCard() {
 
   useEffect(() => {
     const url =
-      'https://api.api-ninjas.com/v1/recipe?query=Italian wedding soup';
+      `https://api.api-ninjas.com/v1/recipe?query=${props.house}`;
     fetch(url, {
       method: 'GET',
       headers: {
@@ -27,18 +32,15 @@ export default function HuffCard() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setSoups(data);
-        setRandomSoup(data[getRandomIndex()]);
+        setSoups(data)
+        
+        setRandomSoup(data[Math.floor(Math.random() * (data.length + 1))]);
       })
       .catch((error) => console.log(error.message));
   }, []);
 
-  const getRandomIndex = (): number => {
-    return Math.floor(Math.random() * soups.length);
-  };
-
   return (
-    <div className="recipe-container">
+    <div className='recipe-container'>
       <h2>{randomSoup.title}</h2>
       <p>{randomSoup.ingredients}</p>
       <p>{randomSoup.servings}</p>
