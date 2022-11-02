@@ -1,0 +1,16 @@
+
+
+.house-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 7%;
+}
+
+.house-imgs {
+  width: 20rem;
+  height: 27rem;
+  margin: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+
+}
