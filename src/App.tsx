@@ -1,25 +1,19 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import SoupView from './components/SoupView';
 import './App.css';
 
-function App() {
+
+const App: React.FC = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  <div>
+    <h1>Soupwarts</h1>
+    <p>Pick your house and receive your soup recipe!</p>
+    <Route exact path="/" render={() => <Home />} />
+    <Route path="/" render={() => <SoupView />} />
+  </div>);
+};
 
 export default App;
