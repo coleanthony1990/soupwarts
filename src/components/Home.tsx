@@ -4,21 +4,22 @@ import ravenclaw from '../assets/ravenclaw.jpeg'
 import gryffindor from '../assets/gryffindor.jpeg'
 import hufflepuff from '../assets/hufflepuff.jpeg'
 import slytherin from '../assets/slytherin.jpeg'
+import './Home.css'
 
 export default function Container() {
   return (
-    <div>
+    <div className='house-container'>
       <Link to='/hufflepuff'>
-        <img src={hufflepuff} />
+        <img className='house-imgs' src={hufflepuff} />
       </Link>
       <Link to='/ravenclaw'>
-        <img src={ravenclaw} />
+        <img className='house-imgs' src={ravenclaw} />
       </Link>
       <Link to='/gryffindor'>
-        <img src={gryffindor} />
+        <img className='house-imgs' src={gryffindor} />
       </Link>
       <Link to='/slytherin'>
-        <img src={slytherin} />
+        <img className='house-imgs' src={slytherin} />
       </Link>
   
     </div>
