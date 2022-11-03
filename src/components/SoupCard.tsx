@@ -1,7 +1,9 @@
+import { random } from 'cypress/types/lodash';
 import { stringify } from 'querystring';
 import React, { useState, useEffect, useCallback, ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import './SoupCard.css';
+import loadingGif from '../assets/loading.gif';
 
 type CardProps = {
   house: string;
@@ -70,6 +72,7 @@ export default function SoupCard(props: CardProps) {
   return (
     <article className="recipe-container">
       {error ? <p>{error}. Try again later.</p> : recipeCard}
+      {randomSoup.title === '' ?  <img src={loadingGif} className='loading-icon' /> : recipeCard }
       <NavLink to="/">Return Home</NavLink>
     </article>
   );
