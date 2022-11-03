@@ -40,31 +40,24 @@ export default function SoupCard(props: CardProps) {
       .catch((error) => setError(error.message));
   }, []);
 
-  const listIngredients = (): ReactNode => {
-    let count = 0;
-    return randomSoup.ingredients.split('|').map((item) => {
-      return <p key={item + '-' + count++}>{item}</p>;
-    });
-  };
-
-  const listInstructions = (): ReactNode => {
-    let count = 0;
-    return randomSoup.instructions.split('. ').map((step) => {
-      return <p key={step + '-' + count++}>{step}</p>;
-    });
+    const listItems = (recipeSection: string): ReactNode => {
+      let count = 0;
+      return recipeSection.split('. ' && '|').map((item: string) => {
+        return <p key={item + '-' + count++}>{item}</p>;
+      });
   };
 
   const recipeCard = randomSoup.title !== '' && (
     <>
       <h2>{randomSoup.title}</h2>
-      <h3>Servings: {randomSoup.servings}</h3>
+      <h3>Yields {randomSoup.servings}</h3>
       <div className="recipe-ingredients">
         <h4>Ingredients</h4>
-        <section className="row">{listIngredients()}</section>
+        <section className="row">{listItems(randomSoup.ingredients)}</section>
       </div>
       <div className="recipe-instructions">
         <h4>Instructions</h4>
-        <section>{listInstructions()}</section>
+        <section>{listItems(randomSoup.instructions)}</section>
       </div>
     </>
   );
@@ -72,7 +65,7 @@ export default function SoupCard(props: CardProps) {
   return (
     <article className="recipe-container">
       {error ? <p>{error}. Try again later.</p> : recipeCard}
-      {randomSoup.title === '' ?  <img src={loadingGif} className='loading-icon' /> : recipeCard }
+      {randomSoup.title === '' ?  <img src={loadingGif} className="loading-icon" /> : recipeCard }
       <NavLink to="/">Return Home</NavLink>
     </article>
   );
