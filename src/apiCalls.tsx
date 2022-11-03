@@ -7,10 +7,10 @@
 // export const getSoups = async (type: string): Promise<(<Promise>() => {}[])> => {
 //   const response = fetch(`https://api.api-ninjas.com/v1/recipe/${type}`, {
 //   method: "GET",
-//   // withCredentials: true,
+//   withCredentials: true,
 //   headers: {
 //     "X-Api-Key": "GDaJLJYwIJFvDvWHi24M9A==YA7y1zm22w9L6WhF"
-//     // "Content-Type": "application/json"
+//     "Content-Type": "application/json"
 //   }})
 //   return response
 // };
