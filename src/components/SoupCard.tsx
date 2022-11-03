@@ -63,9 +63,16 @@ export default function SoupCard(props: CardProps) {
     </>
   );
 
+  const errorMessage = (
+    <>
+      <p>{error}. Try again later.</p>
+      <NavLink to="/">Return Home</NavLink>
+    </>
+  )
+
   return (
     <article className="recipe-container">
-      {error ? <p>{error}. Try again later.</p> : recipeCard}
+      {error ? errorMessage : recipeCard}
       {randomSoup.title === '' ?  <img src={loadingGif} className="loading-icon" /> : null }
     </article>
   );
