@@ -59,14 +59,14 @@ export default function SoupCard(props: CardProps) {
         <h4>Instructions</h4>
         <section>{listItems(randomSoup.instructions)}</section>
       </div>
+      <NavLink to="/">Return Home</NavLink>
     </>
   );
 
   return (
     <article className="recipe-container">
       {error ? <p>{error}. Try again later.</p> : recipeCard}
-      {randomSoup.title === '' ?  <img src={loadingGif} className="loading-icon" /> : recipeCard }
-      <NavLink to="/">Return Home</NavLink>
+      {randomSoup.title === '' ?  <img src={loadingGif} className="loading-icon" /> : null }
     </article>
   );
 }
