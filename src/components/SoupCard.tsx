@@ -1,14 +1,15 @@
+import { random } from 'cypress/types/lodash';
 import { stringify } from 'querystring';
 import React, { useState, useEffect, ReactNode } from 'react';
 import { getSoups } from '../apiCalls';
 import { NavLink } from 'react-router-dom';
 import './SoupCard.css';
+import loadingGif from '../assets/loading.gif';
 
 type CardProps = {
   house: string;
 };
 
-// this is used inside SoupCard and apiCalls, move to a types file?
 export type Recipe = {
   title: string;
   ingredients: string;
@@ -34,41 +35,42 @@ export default function SoupCard(props: CardProps) {
       .catch((error) => setError(error.message));
   }, []);
 
-  const listIngredients = (): ReactNode => {
+  const listItems = (recipeSection: string): ReactNode => {
     let count = 0;
-    return randomSoup.ingredients.split('|').map((item) => {
+    return recipeSection.split(/[.|]+/).map((item: string) => {
       return <p key={item + '-' + count++}>{item}</p>;
-    });
-  };
-
-  const listInstructions = (): ReactNode => {
-    let count = 0;
-    return randomSoup.instructions.split('. ').map((step) => {
-      return <p key={step + '-' + count++}>{step}</p>;
     });
   };
 
   const recipeCard = randomSoup.title !== '' && (
     <>
       <h2>{randomSoup.title}</h2>
-      <h3>Servings: {randomSoup.servings}</h3>
+      <h3>Yields {randomSoup.servings}</h3>
       <div className="recipe-ingredients">
         <h4>Ingredients</h4>
-        <section className="row">{listIngredients()}</section>
+        <section className="row">{listItems(randomSoup.ingredients)}</section>
       </div>
       <div className="recipe-instructions">
         <h4>Instructions</h4>
-        <section>{listInstructions()}</section>
+        <section>{listItems(randomSoup.instructions)}</section>
       </div>
+      <NavLink to="/">Return Home</NavLink>
+    </>
+  );
+
+  const errorMessage = (
+    <>
+      <p>{error}. Try again later.</p>
+      <NavLink to="/">Return Home</NavLink>
     </>
   );
 
   return (
     <article className="recipe-container">
-      {error ? <p>{error}. Try again later.</p> : recipeCard}
-      <NavLink to="/" className="home-btn">
-        Return Home
-      </NavLink>
+      {error ? errorMessage : recipeCard}
+      {randomSoup.title === '' ? (
+        <img src={loadingGif} className="loading-icon" />
+      ) : null}
     </article>
   );
 }
