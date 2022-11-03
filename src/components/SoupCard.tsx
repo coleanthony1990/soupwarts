@@ -42,7 +42,7 @@ export default function SoupCard(props: CardProps) {
 
     const listItems = (recipeSection: string): ReactNode => {
       let count = 0;
-      return recipeSection.split('. ' && '|').map((item: string) => {
+      return recipeSection.split(/[.|]+/).map((item: string) => {
         return <p key={item + '-' + count++}>{item}</p>;
       });
   };
