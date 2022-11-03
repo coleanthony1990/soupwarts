@@ -13,6 +13,39 @@
   max-width: 80%;
 }
 
+.home-btn {
+  text-decoration: none;
+  /* background-color: rgb(44, 42, 42); */
+  /* border: 1px solid rgb(44, 42, 42); */
+  border-radius: 4px;
+  padding: 20px;
+  color: white;
+  /* transition: 0.8s; */
+  background: #000;
+  -webkit-mask-image: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png');
+  mask-image: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png');
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+
+@-webkit-keyframes mask-mask-image {
+  from {
+    -webkit-animation: ani2 0.7s steps(22) forwards;
+    animation: ani2 0.7s steps(22) forwards;
+  }
+  to {
+    -webkit-animation: ani 0.7s steps(22) forwards;
+    animation: ani 0.7s steps(22) forwards;
+  }
+}
+
+.home-btn:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 800px) {
   .recipe-container {
     width: 80%;

@@ -1,5 +1,6 @@
 import { stringify } from 'querystring';
-import React, { useState, useEffect, useCallback, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
+import { getSoups } from '../apiCalls';
 import { NavLink } from 'react-router-dom';
 import './SoupCard.css';
 
@@ -7,7 +8,8 @@ type CardProps = {
   house: string;
 };
 
-type Recipe = {
+// this is used inside SoupCard and apiCalls, move to a types file?
+export type Recipe = {
   title: string;
   ingredients: string;
   servings: string;
@@ -24,16 +26,10 @@ export default function SoupCard(props: CardProps) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const url = `https://api.api-ninjas.com/v1/recipe?query=${props.house}`;
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-Api-Key': 'GDaJLJYwIJFvDvWHi24M9A==YA7y1zm22w9L6WhF',
-      },
-    })
-      .then((res) => res.json())
+    getSoups(props.house)
       .then((data) => {
-        setRandomSoup(data[Math.floor(Math.random() * data.length)]);
+        const randomIndex = Math.floor(Math.random() * data.length);
+        setRandomSoup(data[randomIndex]);
       })
       .catch((error) => setError(error.message));
   }, []);
@@ -70,7 +66,9 @@ export default function SoupCard(props: CardProps) {
   return (
     <article className="recipe-container">
       {error ? <p>{error}. Try again later.</p> : recipeCard}
-      <NavLink to="/">Return Home</NavLink>
+      <NavLink to="/" className="home-btn">
+        Return Home
+      </NavLink>
     </article>
   );
 }
