@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { stringify } from 'querystring';
+import React, { useState, useEffect, useCallback, ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 import './SoupCard.css';
 
@@ -14,13 +15,13 @@ type Recipe = {
 };
 
 export default function SoupCard(props: CardProps) {
-  const [soups, setSoups] = useState<Recipe[]>([]);
   const [randomSoup, setRandomSoup] = useState<Recipe>({
     title: '',
     ingredients: '',
     servings: '',
     instructions: '',
   });
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const url = `https://api.api-ninjas.com/v1/recipe?query=${props.house}`;
@@ -32,19 +33,43 @@ export default function SoupCard(props: CardProps) {
     })
       .then((res) => res.json())
       .then((data) => {
-        setSoups(data);
-        setRandomSoup(data[Math.floor(Math.random() * (data.length + 1))]);
+        setRandomSoup(data[Math.floor(Math.random() * data.length)]);
       })
-      .catch((error) => console.log(error.message));
+      .catch((error) => setError(error.message));
   }, []);
+
+  const listIngredients = (): ReactNode => {
+    let count = 0;
+    return randomSoup.ingredients.split('|').map((item) => {
+      return <p key={item + '-' + count++}>{item}</p>;
+    });
+  };
+
+  const listInstructions = (): ReactNode => {
+    let count = 0;
+    return randomSoup.instructions.split('. ').map((step) => {
+      return <p key={step + '-' + count++}>{step}</p>;
+    });
+  };
+
+  const recipeCard = randomSoup.title !== '' && (
+    <>
+      <h2>{randomSoup.title}</h2>
+      <h3>Servings: {randomSoup.servings}</h3>
+      <div className="recipe-ingredients">
+        <h4>Ingredients</h4>
+        <section className="row">{listIngredients()}</section>
+      </div>
+      <div className="recipe-instructions">
+        <h4>Instructions</h4>
+        <section>{listInstructions()}</section>
+      </div>
+    </>
+  );
 
   return (
     <article className="recipe-container">
-      <h2>{randomSoup.title}</h2>
-      <p>{randomSoup.ingredients}</p>
-      <p>{randomSoup.servings}</p>
-      <h3>Instructions: </h3>
-      <p>{randomSoup.instructions}</p>
+      {error ? <p>{error}. Try again later.</p> : recipeCard}
       <NavLink to="/">Return Home</NavLink>
     </article>
   );

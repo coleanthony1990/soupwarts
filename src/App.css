@@ -1,13 +1,20 @@
 @import url('https://fonts.cdnfonts.com/css/harrypotter7');
 
-
 .main-container {
   text-align: center;
   color: gold;
   font-family: 'HarryPotter7', sans-serif;
   border: 1px solid black;
-  background-color: rgb(48, 24, 79);
+  /* border can be seen in the smaller iPhone SE screen size. I would recommend removing this. */
+  /* background-color: rgb(48, 24, 79); */
+  /* moved background-color to the index.css file to cover whole page always */
+
   height: 100vh;
   width: 100vw;
   /* background-repeat: no-repeat; */
+}
+
+.header {
+  width: 100%;
+  border: 0;
 }
