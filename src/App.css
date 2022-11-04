@@ -2,13 +2,14 @@
 
 .main-container {
   text-align: center;
-  color: gold;
+  color: rgb(195, 188, 178);
   font-family: 'HarryPotter7', sans-serif;
   height: 100vh;
   width: 100vw;
 }
 
 .header {
+  border: 2px solid red;
   width: 100%;
   border: 0;
 }
