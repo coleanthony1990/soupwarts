@@ -1,6 +1,7 @@
 import { random } from 'cypress/types/lodash';
 import { stringify } from 'querystring';
-import React, { useState, useEffect, useCallback, ReactNode } from 'react';
+import React, { useState, useEffect, ReactNode } from 'react';
+import { getSoups } from '../apiCalls';
 import { NavLink } from 'react-router-dom';
 import './SoupCard.css';
 import loadingGif from '../assets/loading.gif';
@@ -9,7 +10,7 @@ type CardProps = {
   house: string;
 };
 
-type Recipe = {
+export type Recipe = {
   title: string;
   ingredients: string;
   servings: string;
@@ -26,31 +27,36 @@ export default function SoupCard(props: CardProps) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const url = `https://api.api-ninjas.com/v1/recipe?query=${props.house}`;
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'X-Api-Key': 'GDaJLJYwIJFvDvWHi24M9A==YA7y1zm22w9L6WhF',
-      },
-    })
-      .then((res) => res.json())
+    getSoups(props.house)
       .then((data) => {
-        setRandomSoup(data[Math.floor(Math.random() * data.length)]);
+        const randomIndex = Math.floor(Math.random() * data.length);
+        setRandomSoup(data[randomIndex]);
       })
       .catch((error) => setError(error.message));
   }, []);
 
-    const listItems = (recipeSection: string): ReactNode => {
-      let count = 0;
-      return recipeSection.split(/[.|]+/).map((item: string) => {
-        return <p key={item + '-' + count++}>{item}</p>;
-      });
+  const listItems = (recipeSection: string): ReactNode => {
+    let count = 0;
+    return recipeSection.split(/[.|]+/).map((item: string) => {
+      return <p key={item + '-' + count++}>{item}</p>;
+    });
+  };
+
+  const homeButton = (): ReactNode => {
+    return (
+      <NavLink className="button-container" to="/">
+        <span className="text">Return Home</span>
+        <button id="work" type="button" name="Hover" className="home-btn wand">
+          Return Home
+        </button>
+      </NavLink>
+    );
   };
 
   const recipeCard = randomSoup.title !== '' && (
     <>
-      <h2>{randomSoup.title}</h2>
-      <h3>Yields {randomSoup.servings}</h3>
+      <h2 className="card-title">{randomSoup.title}</h2>
+      <h3 className="card-serving">Yields {randomSoup.servings}</h3>
       <div className="recipe-ingredients">
         <h4>Ingredients</h4>
         <section className="row">{listItems(randomSoup.ingredients)}</section>
@@ -59,21 +65,23 @@ export default function SoupCard(props: CardProps) {
         <h4>Instructions</h4>
         <section>{listItems(randomSoup.instructions)}</section>
       </div>
-      <NavLink to="/">Return Home</NavLink>
+      {homeButton()}
     </>
   );
 
   const errorMessage = (
     <>
       <p>{error}. Try again later.</p>
-      <NavLink to="/">Return Home</NavLink>
+      {homeButton()}
     </>
-  )
+  );
 
   return (
     <article className="recipe-container">
       {error ? errorMessage : recipeCard}
-      {randomSoup.title === '' ?  <img src={loadingGif} className="loading-icon" /> : null }
+      {randomSoup.title === '' ? (
+        <img src={loadingGif} className="loading-icon" />
+      ) : null}
     </article>
   );
 }
