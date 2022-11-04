@@ -5,10 +5,12 @@
 }
 
 .recipe-container {
-  background-color: bisque;
+  background: url('../assets/recipe-card.jpeg');
+  background-position: center;
+  background-size: cover;
   color: black;
-  border: 8px solid black;
-  border-radius: 8px;
+  border: 2px solid black;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   padding: 40px;
