@@ -42,6 +42,17 @@ export default function SoupCard(props: CardProps) {
     });
   };
 
+  const homeButton = (): ReactNode => {
+    return (
+      <NavLink className="button-container" to="/">
+        <span className="text">Return Home</span>
+        <button id="work" type="button" name="Hover" className="home-btn wand">
+          Return Home
+        </button>
+      </NavLink>
+    );
+  };
+
   const recipeCard = randomSoup.title !== '' && (
     <>
       <h2>{randomSoup.title}</h2>
@@ -54,14 +65,14 @@ export default function SoupCard(props: CardProps) {
         <h4>Instructions</h4>
         <section>{listItems(randomSoup.instructions)}</section>
       </div>
-      <NavLink to="/">Return Home</NavLink>
+      {homeButton()}
     </>
   );
 
   const errorMessage = (
     <>
       <p>{error}. Try again later.</p>
-      <NavLink to="/">Return Home</NavLink>
+      {homeButton()}
     </>
   );
 
