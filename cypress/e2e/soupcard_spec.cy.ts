@@ -3,13 +3,6 @@ import { should } from 'chai';
 describe('Soupwarts Recipe Display', () => {
   beforeEach(() => {
     cy.visit('/');
-    // cy.visit('http://localhost:3000/')
-    // cy.get('[href="/gryffindor"] > img').click();
-    // cy.intercept('https://api.api-ninjas.com/v1/recipe?query=stew', {
-    //   fixture: 'get_stub.json',
-    // }).as('soup-card');
-
-    // cy.visit('http://localhost:3000/gryffindor');
   });
 
   it('Should display the Soupwarts header', () => {
