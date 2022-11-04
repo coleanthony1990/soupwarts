@@ -10,20 +10,20 @@ export default function Container() {
   return (
     <div>
       <p>Pick your house and receive your soup recipe!</p>
-    <div className='house-container'>
-      <Link to='/hufflepuff'>
-        <img className='house-imgs' src={hufflepuff} />
-      </Link>
-      <Link to='/ravenclaw'>
-        <img className='house-imgs' src={ravenclaw} />
-      </Link>
-      <Link to='/gryffindor'>
-        <img className='house-imgs' src={gryffindor} />
-      </Link>
-      <Link to='/slytherin'>
-        <img className='house-imgs' src={slytherin} />
-      </Link>
-    </div>
+      <div className='house-container'>
+        <Link to='/hufflepuff'>
+          <img className='house-imgs hufflepuff' src={hufflepuff} />
+        </Link>
+        <Link to='/ravenclaw'>
+          <img className='house-imgs ravenclaw' src={ravenclaw} />
+        </Link>
+        <Link to='/gryffindor'>
+          <img className='house-imgs gryffindor' src={gryffindor} />
+        </Link>
+        <Link to='/slytherin'>
+          <img className='house-imgs slytherin' src={slytherin} />
+        </Link>
+      </div>
     </div>
   )
 }
