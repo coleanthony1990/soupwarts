@@ -59,7 +59,7 @@ export default function SoupCard(props: CardProps) {
       <p className="card-serving">Yields {randomSoup.servings}</p>
       <div className="recipe">
         <div className="recipe-ingredients">
-          <h4>Ingredients</h4>
+          <h4 className="ingredients-header">Ingredients</h4>
           <section className="row=">{listItems(randomSoup.ingredients)}</section>
         </div>
         <div className="recipe-instructions">

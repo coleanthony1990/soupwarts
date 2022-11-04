@@ -84,6 +84,10 @@
   margin-left: 75px;
 }
 
+.ingredients-header {
+  text-align: center;
+}
+
 @-webkit-keyframes ani {
   from {
     -webkit-mask-position: 0 0;

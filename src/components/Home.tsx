@@ -9,7 +9,7 @@ import './Home.css'
 export default function Container() {
   return (
     <div>
-      <p>Pick your house and receive your soup recipe!</p>
+      <p>Pick your house to be sorted a soup</p>
       <div className='house-container'>
         <Link to='/hufflepuff'>
           <img className='house-imgs hufflepuff' src={hufflepuff} />
