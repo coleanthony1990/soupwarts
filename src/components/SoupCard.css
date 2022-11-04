@@ -4,6 +4,15 @@
   width: 20vw;
 }
 
+.card-serving {
+  size: 30px;
+}
+
+.recipe {
+  display: flex;
+  justify-content: left
+}
+
 .recipe-container {
   background: url('../assets/recipe-card.jpeg');
   background-position: center;
@@ -12,7 +21,7 @@
   border: 2px solid black;
   border-radius: 12px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 40px;
   flex: 1 1 0px;
   justify-content: center;
@@ -68,6 +77,11 @@
   font-family: 'HarryPotter7', sans-serif;
   position: absolute;
   overflow: hidden;
+}
+
+.recipe-ingredients {
+  text-align: left;
+  margin-left: 75px;
 }
 
 @-webkit-keyframes ani {

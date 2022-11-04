@@ -54,19 +54,21 @@ export default function SoupCard(props: CardProps) {
   };
 
   const recipeCard = randomSoup.title !== '' && (
-    <>
+    <div>
       <h2 className="card-title">{randomSoup.title}</h2>
-      <h3 className="card-serving">Yields {randomSoup.servings}</h3>
-      <div className="recipe-ingredients">
-        <h4>Ingredients</h4>
-        <section className="row">{listItems(randomSoup.ingredients)}</section>
-      </div>
-      <div className="recipe-instructions">
-        <h4>Instructions</h4>
-        <section>{listItems(randomSoup.instructions)}</section>
+      <p className="card-serving">Yields {randomSoup.servings}</p>
+      <div className="recipe">
+        <div className="recipe-ingredients">
+          <h4>Ingredients</h4>
+          <section className="row=">{listItems(randomSoup.ingredients)}</section>
+        </div>
+        <div className="recipe-instructions">
+          <h4>Instructions</h4>
+          <section>{listItems(randomSoup.instructions)}</section>
+        </div>
       </div>
       {homeButton()}
-    </>
+    </div>
   );
 
   const errorMessage = (
