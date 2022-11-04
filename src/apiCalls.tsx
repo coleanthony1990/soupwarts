@@ -8,7 +8,7 @@ export const getSoups = async (house: string): Promise<Recipe[]> => {
     },
   };
   const response = await fetch(
-    `https://api.api-ninjas.com/v1/recipe/?query=${house}`,
+    `https://api.api-ninjas.com/v1/recipe?query=${house}`,
     options
   );
   return await response.json();

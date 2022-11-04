@@ -55,8 +55,8 @@ export default function SoupCard(props: CardProps) {
 
   const recipeCard = randomSoup.title !== '' && (
     <>
-      <h2>{randomSoup.title}</h2>
-      <h3>Yields {randomSoup.servings}</h3>
+      <h2 className="card-title">{randomSoup.title}</h2>
+      <h3 className="card-serving">Yields {randomSoup.servings}</h3>
       <div className="recipe-ingredients">
         <h4>Ingredients</h4>
         <section className="row">{listItems(randomSoup.ingredients)}</section>
