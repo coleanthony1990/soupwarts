@@ -4,13 +4,24 @@
   width: 20vw;
 }
 
-.recipe-container {
-  background-color: bisque;
-  color: black;
-  border: 8px solid black;
-  border-radius: 8px;
+.card-serving {
+  size: 30px;
+}
+
+.recipe {
   display: flex;
-  flex-direction: column;
+  justify-content: left
+}
+
+.recipe-container {
+  background: url('../assets/recipe-card.jpeg');
+  background-position: center;
+  background-size: cover;
+  color: black;
+  border: 2px solid black;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
   padding: 40px;
   flex: 1 1 0px;
   justify-content: center;
@@ -66,6 +77,15 @@
   font-family: 'HarryPotter7', sans-serif;
   position: absolute;
   overflow: hidden;
+}
+
+.recipe-ingredients {
+  text-align: left;
+  margin-left: 75px;
+}
+
+.ingredients-header {
+  text-align: center;
 }
 
 @-webkit-keyframes ani {
