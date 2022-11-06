@@ -8,13 +8,29 @@
   size: 30px;
 }
 
+.soup-card {
+  width: 80%;
+}
+
 .recipe {
   display: flex;
-  justify-content: left
+  justify-content: left;
+  gap: 60px;
+}
+
+.recipe-title {
+  margin-top: 50px;
+}
+
+.recipe-header {
+  text-decoration-line: underline;
+  font-size: 1.3rem;
 }
 
 .recipe-container {
   background: url('../assets/recipe-card.jpeg');
+  font-size: 1rem;
+  font-weight: bold;
   background-position: center;
   background-size: cover;
   color: black;
@@ -27,7 +43,11 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  max-width: 80%;
+}
+
+.recipe-ingredients {
+  text-align: left;
+  margin-left: 50px;
 }
 
 .button-container {
@@ -51,7 +71,8 @@
   width: 101%;
   height: 100%;
   font-family: 'HarryPotter7', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
   background: #000;
   -webkit-mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png');
   mask: url('https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png');
@@ -75,17 +96,9 @@
   text-align: center;
   width: 101%;
   font-family: 'HarryPotter7', sans-serif;
+  font-size: 1rem;
   position: absolute;
   overflow: hidden;
-}
-
-.recipe-ingredients {
-  text-align: left;
-  margin-left: 75px;
-}
-
-.ingredients-header {
-  text-align: center;
 }
 
 @-webkit-keyframes ani {
@@ -137,8 +150,17 @@
 }
 
 @media screen and (max-width: 800px) {
-  .recipe-container {
-    width: 80%;
+  .soup-card {
+    width: 100%;
+  }
+  .recipe {
     padding: 10px;
+    flex-direction: column;
+  }
+  .recipe-ingredients {
+    text-align: center;
+  }
+  .recipe-instructions {
+    text-align: center;
   }
 }

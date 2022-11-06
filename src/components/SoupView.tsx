@@ -3,7 +3,7 @@ import SoupCard from './SoupCard';
 import { Route } from 'react-router-dom';
 import './SoupView.css';
 
-const SoupView = () => {
+export default function SoupView() {
   return (
     <div className="soup">
       <Route
@@ -28,6 +28,4 @@ const SoupView = () => {
       />
     </div>
   );
-};
-
-export default SoupView;
+}
