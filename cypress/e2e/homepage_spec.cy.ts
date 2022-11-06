@@ -10,7 +10,7 @@ describe('Soupwarts homepage', () => {
   it('Should show the user guide statement', () => {
     cy.get('p').should(
       'contain',
-      'Pick your house and receive your soup recipe!'
+      'Pick your house to be sorted a soup'
     );
   });
 
