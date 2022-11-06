@@ -1,7 +1,7 @@
 import { Recipe } from './components/SoupCard';
 
 export const getSoups = async (house: string): Promise<Recipe[]> => {
-  const options = {
+  const options: RequestInit = {
     method: 'GET',
     headers: {
       'X-Api-Key': 'GDaJLJYwIJFvDvWHi24M9A==YA7y1zm22w9L6WhF',
