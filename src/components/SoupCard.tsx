@@ -69,13 +69,6 @@ export default function SoupCard(props: CardProps) {
     </div>
   );
 
-  // const errorMessage = (
-  //   <>
-  //     <p>{error}. Try again later.</p>
-  //     {homeButton}
-  //   </>
-  // );
-
   return (
     <div className="soup-card">
       <NavBar />
