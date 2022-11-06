@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Soupwarts <--- Deploy link
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Project Wireframe](https://excalidraw.com/#room=ee7d29e765e7d7b59085,n_E9_-1dTtyvyIVjYjlgnQ)
 
-## Available Scripts
+## Overview
+The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help.
 
-In the project directory, you can run:
+[GIF here]
 
-### `npm start`
+## Project Context
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+We are currently studying Front End Developement at the Turing School of Software and Design. This app is the product of our Mod 3 group project, assigned and completed approximately four months into our coding careers. The purpose of this project was to be a "stretch tech": implementing a technology (TypeScript) in the app that was self-taught in the course of the project.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Requirements for this project included:
 
-### `npm test`
+- Meeting the specs for an “MVP” listed in the Project Spec
+- Using at least one external API
+- Implementing one of the “Stretch Technologies” listed in the Project Spec
+- The app being deployed
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
-### `npm run build`
+## Setup
+If you'd like to pull down the code to your local machine:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Make a copy of this repository by pressing the 'Fork' button in the upper right corner and following the prompts
+- Clone your copy of the repository down to your local machine:
+  - On your forked repository's page, click the green 'Code' button, select SSH, and copy the URL
+  - Run `git clone <copied URL>` in your command line
+- `cd` into the root directory
+- Run `npm install` in your command line to install the necessary dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
+- React
+- React Router
+- JavaScript
+- Typescript
+- Cypress
+- HTML
+- CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dev Notes
+### Wins
+- Positive group dynamics
+- Full funcationality and navigability 
+- Daily standups
+- Agile working process
 
-### `npm run eject`
+### Challenges
+- Annotating fetch calls using TypeScript
+- Debugging TypeScript errors
+- Implementing App Architecture in the context of React-Router
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Dev Contacts
+Cole Anthony<br>
+[LinkedIn](https://www.linkedin.com/in/cole-edwin-anthony/)<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Hannah Celemen<br>
+[LinkedIn](https://www.linkedin.com/in/hannah-celemen/)<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Scott Gaines<br>
+scottdgaines@gmail.com<br>
+[LinkedIn](https://www.linkedin.com/in/scottdgaines-fe/)<br>
+[GitHub](https://github.com/scottdgaines)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Credits
+Wireframe created using Excalidraw<br>
+API sourced from [api-ninjas.com](https://api-ninjas.com/api/recipe)
