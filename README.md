@@ -9,7 +9,7 @@ The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff 
 
 ## Project Context
 
-We are currently studying Front End Developement at the Turing School of Software and Design. This app is the product of our Mod 3 group project, assigned and completed approximately four months into our coding careers. The purpose of this project was to be a "stretch tech": implementing a technology (TypeScript) in the app that was self-taught over the duration of the project.
+We are currently studying Front End Developement at the Turing School of Software and Design. This app is the product of our Mod 3 group project, assigned and completed approximately four months into our coding careers. The purpose of this project was to be a "stretch tech": implementing a technology (TypeScript) in the app that was self-taught in the course of the project.
 
 Requirements for this project included:
 
