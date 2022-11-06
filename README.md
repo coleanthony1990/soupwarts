@@ -3,7 +3,7 @@
 [Project Wireframe](https://excalidraw.com/#room=ee7d29e765e7d7b59085,n_E9_-1dTtyvyIVjYjlgnQ)
 
 ## Overview
-The stuends of Hogwarts are hungry, but can't decide what soup they can make that would be the best representation of their house. Fear no more, wonderkids: Soupwarts is here to help.
+The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help.
 
 [GIF here]
 
