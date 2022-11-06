@@ -1,7 +1,6 @@
-// import { random } from 'cypress/types/lodash';
-// import { stringify } from 'querystring';
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
+import ErrorPage from './ErrorPage';
 import { getSoups } from '../apiCalls';
 import { NavLink } from 'react-router-dom';
 import './SoupCard.css';
@@ -17,6 +16,15 @@ export type Recipe = {
   servings: string;
   instructions: string;
 };
+
+export const homeButton = (
+  <NavLink className="button-container" to="/">
+    <span className="text">Return Home</span>
+    <button id="work" type="button" name="Hover" className="home-btn wand">
+      Return Home
+    </button>
+  </NavLink>
+);
 
 export default function SoupCard(props: CardProps) {
   const [randomSoup, setRandomSoup] = useState<Recipe>({
@@ -43,15 +51,6 @@ export default function SoupCard(props: CardProps) {
     });
   };
 
-  const homeButton = (
-    <NavLink className="button-container" to="/">
-      <span className="text">Return Home</span>
-      <button id="work" type="button" name="Hover" className="home-btn wand">
-        Return Home
-      </button>
-    </NavLink>
-  );
-
   const recipeCard = randomSoup.title !== '' && (
     <div>
       <h2 className="recipe-title">{randomSoup.title}</h2>
@@ -70,21 +69,21 @@ export default function SoupCard(props: CardProps) {
     </div>
   );
 
-  const errorMessage = (
-    <>
-      <p>{error}. Try again later.</p>
-      {homeButton}
-    </>
-  );
+  // const errorMessage = (
+  //   <>
+  //     <p>{error}. Try again later.</p>
+  //     {homeButton}
+  //   </>
+  // );
 
   return (
     <div className="soup-card">
       <NavBar />
       <article className="recipe-container">
-        {error ? errorMessage : recipeCard}
-        {randomSoup.title === '' && (
+        {error ? <ErrorPage error={error} /> : recipeCard}
+        {randomSoup.title === '' && !error ? (
           <img src={loadingGif} className="loading-icon" />
-        )}
+        ) : null}
       </article>
     </div>
   );
