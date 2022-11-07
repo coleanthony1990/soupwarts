@@ -13,6 +13,9 @@ describe('Soupwarts homepage', () => {
       'Pick your house to be sorted a soup'
     );
   });
+  it('should display a random quote about soup' , () => {
+    cy.get('p').contains('-')
+  })
 
   it('Should display all four house logos', () => {
     cy.get('[href="/hufflepuff"] > img').should('be.visible');
