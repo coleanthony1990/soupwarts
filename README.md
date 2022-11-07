@@ -1,11 +1,10 @@
 # Soupwarts <--- Deploy link
 
-[Project Wireframe](https://excalidraw.com/#room=ee7d29e765e7d7b59085,n_E9_-1dTtyvyIVjYjlgnQ)
-
 ## Overview
 The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help.
 
-[GIF here]
+![2022-11-07 08 28 24](https://user-images.githubusercontent.com/103966650/200353264-3fee24b1-1e38-4bb3-a201-791d6178d053.gif)
+
 
 ## Project Context
 
@@ -18,7 +17,7 @@ Requirements for this project included:
 - Implementing one of the “Stretch Technologies” listed in the Project Spec
 - The app being deployed
 
-Here is the [Project Spec.](https://frontend.turing.edu/projects/module-3/stretch.html)
+[Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html) | [Project Wireframe](https://excalidraw.com/#room=ee7d29e765e7d7b59085,n_E9_-1dTtyvyIVjYjlgnQ)
 
 ## Setup
 If you'd like to pull down the code to your local machine:
