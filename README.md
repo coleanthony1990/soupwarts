@@ -1,14 +1,14 @@
-# Soupwarts <--- Deploy link
+# [Soupwarts](https://scottdgaines.github.io/soupwarts/#/)
 
 ## Overview
-The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help.
+The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help. Upon selecting their house, users are generated a randomized soup recipe categorized according to their house. Users can navigate to different houses from their soup recipe's page (if they would like to see what their classmates are eating), and users can return to the main page once they are done.
 
 ![2022-11-07 08 28 24](https://user-images.githubusercontent.com/103966650/200353264-3fee24b1-1e38-4bb3-a201-791d6178d053.gif)
 
 
 ## Project Context
 
-We are currently studying Front End Developement at the Turing School of Software and Design. This app is the product of our Mod 3 group project, assigned and completed approximately four months into our coding careers. The purpose of this project was to be a "stretch tech": implementing a technology (TypeScript) in the app that was self-taught in the course of the project.
+We are currently studying Front-End Developement at the Turing School of Software and Design. This app is the product of our Mod 3 group project, assigned and completed approximately four months into our coding careers. The purpose of this project was to be a "stretch tech": implementing a technology (TypeScript) in the app that was self-taught over the course of the project.
 
 Requirements for this project included:
 
