@@ -19,25 +19,34 @@ describe('Soupwarts Recipe Display', () => {
       fixture: 'get_stub.json',
     });
     cy.visit('/gryffindor');
-    cy.get('.recipe-container').should('be.visible')
-    cy.get('.card-title').should('be.visible').contains('Eliopulos Stew');
-    cy.get('.recipe-container > :nth-child(2)').should('be.visible');
-    cy.get('.card-serving').should('be.visible').contains('6 Servings');
+    cy.get('.recipe-container').should('be.visible');
+    cy.get('.recipe-title').should('be.visible').contains('Eliopulos Stew');
+    cy.get('.recipe-serving').should('be.visible').contains('6 Servings');
+    cy.get('.recipe-ingredients').should('be.visible');
     cy.get('.recipe-instructions > h4')
       .should('be.visible')
       .contains('Instructions');
-    cy.get('.recipe-container > :nth-child(5)').should('be.visible');
     cy.get('.active').should('be.visible').contains('Return Home');
   });
 
-  it('Should return to the home screen when selecting the link', () => {
+  it('Should return to the home screen when selecting the Return Home Button', () => {
     cy.visit('/gryffindor');
-    cy.get('.active').click();
+    cy.get('#work').click();
     cy.get('[href="/hufflepuff"] > img').should('be.visible');
     cy.get('[href="/ravenclaw"] > img').should('be.visible');
     cy.get('[href="/gryffindor"] > img').should('be.visible');
     cy.get('[href="/slytherin"] > img').should('be.visible');
   });
+
+  it('Should have a nav bar that allows user to navigate to other house soups', () => {
+    cy.visit('/gryffindor');
+    cy.get('[href="/hufflepuff"]').click();
+    cy.get('.recipe-title').contains('Egg Soup');
+    cy.get('[href="/ravenclaw"]').click();
+    cy.get('.recipe-title').contains('Veggie Soup');
+    cy.get('[href="/slytherin"]').click();
+    cy.get('.recipe-title').contains('Broth');
+  })
 
   it('Should display an error message if there was a fail to fetch for gryffindor', () => {
     cy.intercept('GET', 'https://api.api-ninjas.com/v1/recipe?query=stew', {

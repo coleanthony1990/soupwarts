@@ -1,6 +1,6 @@
-import { random } from 'cypress/types/lodash';
-import { stringify } from 'querystring';
-import React, { useState, useEffect, ReactNode } from 'react';
+import React, { useState, useEffect } from 'react';
+import NavBar from './NavBar';
+import ErrorPage from './ErrorPage';
 import { getSoups } from '../apiCalls';
 import { NavLink } from 'react-router-dom';
 import './SoupCard.css';
@@ -16,6 +16,15 @@ export type Recipe = {
   servings: string;
   instructions: string;
 };
+
+export const homeButton = (
+  <NavLink className="button-container" to="/">
+    <span className="text">Return Home</span>
+    <button id="work" type="button" name="Hover" className="home-btn wand">
+      Return Home
+    </button>
+  </NavLink>
+);
 
 export default function SoupCard(props: CardProps) {
   const [randomSoup, setRandomSoup] = useState<Recipe>({
@@ -35,55 +44,40 @@ export default function SoupCard(props: CardProps) {
       .catch((error) => setError(error.message));
   }, []);
 
-  const listItems = (recipeSection: string): ReactNode => {
+  const listItems = (recipeSection: string) => {
     let count = 0;
     return recipeSection.split(/[.|]+/).map((item: string) => {
       return <p key={item + '-' + count++}>{item}</p>;
     });
   };
 
-  const homeButton = (): ReactNode => {
-    return (
-      <NavLink className="button-container" to="/">
-        <span className="text">Return Home</span>
-        <button id="work" type="button" name="Hover" className="home-btn wand">
-          Return Home
-        </button>
-      </NavLink>
-    );
-  };
-
   const recipeCard = randomSoup.title !== '' && (
     <div>
-      <h2 className="card-title">{randomSoup.title}</h2>
-      <p className="card-serving">Yields {randomSoup.servings}</p>
+      <h2 className="recipe-title">{randomSoup.title}</h2>
+      <p className="recipe-serving">Yields {randomSoup.servings}</p>
       <div className="recipe">
         <div className="recipe-ingredients">
-          <h4 className="ingredients-header">Ingredients</h4>
-          <section className="row=">{listItems(randomSoup.ingredients)}</section>
+          <h3 className="recipe-header">Ingredients</h3>
+          <section className="row">{listItems(randomSoup.ingredients)}</section>
         </div>
         <div className="recipe-instructions">
-          <h4>Instructions</h4>
+          <h4 className="recipe-header">Instructions</h4>
           <section>{listItems(randomSoup.instructions)}</section>
         </div>
       </div>
-      {homeButton()}
+      {homeButton}
     </div>
   );
 
-  const errorMessage = (
-    <>
-      <p>{error}. Try again later.</p>
-      {homeButton()}
-    </>
-  );
-
   return (
-    <article className="recipe-container">
-      {error ? errorMessage : recipeCard}
-      {randomSoup.title === '' ? (
-        <img src={loadingGif} className="loading-icon" />
-      ) : null}
-    </article>
+    <div className="soup-card">
+      <NavBar />
+      <article className="recipe-container">
+        {error ? <ErrorPage error={error} /> : recipeCard}
+        {randomSoup.title === '' && !error ? (
+          <img src={loadingGif} className="loading-icon" />
+        ) : null}
+      </article>
+    </div>
   );
 }
