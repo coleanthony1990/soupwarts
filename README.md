@@ -18,7 +18,7 @@ Requirements for this project included:
 - Implementing one of the “Stretch Technologies” listed in the Project Spec
 - The app being deployed
 
-[Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
+Here is the [Project Spec.](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Setup
 If you'd like to pull down the code to your local machine:
@@ -31,13 +31,13 @@ If you'd like to pull down the code to your local machine:
 - Run `npm install` in your command line to install the necessary dependencies
 
 ## Technologies Used
-- React
-- React Router
-- JavaScript
-- Typescript
-- Cypress
-- HTML
-- CSS
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+![Cypress](https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 ## Dev Notes
 ### Wins
@@ -56,7 +56,9 @@ Cole Anthony<br>
 [LinkedIn](https://www.linkedin.com/in/cole-edwin-anthony/)<br>
 
 Hannah Celemen<br>
+hcelemen@icloud.com<br>
 [LinkedIn](https://www.linkedin.com/in/hannah-celemen/)<br>
+[GitHub](https://github.com/ohClaire)
 
 Scott Gaines<br>
 scottdgaines@gmail.com<br>
@@ -66,4 +68,6 @@ scottdgaines@gmail.com<br>
 
 ### Credits
 Wireframe created using Excalidraw<br>
-API sourced from [api-ninjas.com](https://api-ninjas.com/api/recipe)
+API sourced from [api-ninjas.com](https://api-ninjas.com/api/recipe)<br>
+Hogwarts House Crests from [Pinterest](https://br.pinterest.com/pin/489062840797387185/)<br>
+Soup Quotes from [Greeting Card Poet](https://www.greetingcardpoet.com/comforting-soup-quotes/)
