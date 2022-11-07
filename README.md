@@ -1,4 +1,4 @@
-# Soupwarts <--- Deploy link
+# [Soupwarts](https://scottdgaines.github.io/soupwarts/#/)
 
 ## Overview
 The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help.
