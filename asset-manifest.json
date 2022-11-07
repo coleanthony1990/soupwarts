@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/soupwarts/static/css/main.f4c45839.css",
-    "main.js": "/soupwarts/static/js/main.6d8656dc.js",
+    "main.js": "/soupwarts/static/js/main.11b693db.js",
     "static/media/loading.gif": "/soupwarts/static/media/loading.81c0908dc37e5908f121.gif",
     "static/media/background.jpeg": "/soupwarts/static/media/background.037e8442abc2753ac975.jpeg",
     "static/media/slytherin.jpeg": "/soupwarts/static/media/slytherin.5f15f2fe337549e47420.jpeg",
@@ -11,10 +11,10 @@
     "static/media/ravenclaw.jpeg": "/soupwarts/static/media/ravenclaw.fb88e285e23d903d1150.jpeg",
     "index.html": "/soupwarts/index.html",
     "main.f4c45839.css.map": "/soupwarts/static/css/main.f4c45839.css.map",
-    "main.6d8656dc.js.map": "/soupwarts/static/js/main.6d8656dc.js.map"
+    "main.11b693db.js.map": "/soupwarts/static/js/main.11b693db.js.map"
   },
   "entrypoints": [
     "static/css/main.f4c45839.css",
-    "static/js/main.6d8656dc.js"
+    "static/js/main.11b693db.js"
   ]
 }
