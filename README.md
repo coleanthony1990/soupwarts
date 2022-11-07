@@ -40,6 +40,7 @@ If you'd like to pull down the code to your local machine:
 
 ## Dev Notes
 ### Wins
+- Effectively self-teaching and implementing a new technology
 - Positive group dynamics
 - Full funcationality and navigability 
 - Daily standups
