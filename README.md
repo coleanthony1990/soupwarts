@@ -42,7 +42,7 @@ If you'd like to pull down the code to your local machine:
 ### Wins
 - Effectively self-teaching and implementing a new technology
 - Positive group dynamics
-- Full funcationality and navigability 
+- Full functionality and navigability 
 - Daily standups
 - Agile working process
 
