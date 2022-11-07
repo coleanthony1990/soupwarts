@@ -32,3 +32,7 @@
 .slytherin:hover {
   box-shadow: 0 0 10px rgb(235, 255, 188);
 }
+
+.quotes {
+  margin: 30px;
+}
