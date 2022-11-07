@@ -1,7 +1,7 @@
 # [Soupwarts](https://scottdgaines.github.io/soupwarts/#/)
 
 ## Overview
-The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help. Upon selecting their house, users are generated a randomized soup recipe categorized accordingly to their house. Users can navigate to different houses from their soup recipe's page (if they would like to see what their classmates are eating), and users can return to the main page once they are done.
+The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help. Upon selecting their house, users are generated a randomized soup recipe categorized according to their house. Users can navigate to different houses from their soup recipe's page (if they would like to see what their classmates are eating), and users can return to the main page once they are done.
 
 ![2022-11-07 08 28 24](https://user-images.githubusercontent.com/103966650/200353264-3fee24b1-1e38-4bb3-a201-791d6178d053.gif)
 
