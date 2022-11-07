@@ -2,6 +2,7 @@
   "name": "soupwarts",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://coleanthony1990.github.io/soupwarts",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -23,7 +24,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +47,10 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^10.11.0"
+    "cypress": "^10.11.0",
+    "gh-pages": "^4.0.0"
+  },
+  "repository": {
+    "url": "https://github.com/coleanthony1990/soupwarts"
   }
 }
