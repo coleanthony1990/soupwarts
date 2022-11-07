@@ -6,7 +6,14 @@ import hufflepuff from '../assets/hufflepuff.jpeg'
 import slytherin from '../assets/slytherin.jpeg'
 import './Home.css'
 
-export default function Container() {
+type Quote = {
+  quote: {
+    id: number;
+    quote: string;
+    by: string;
+  }};
+  
+export default function Home({quote}: Quote) {
   return (
     <div>
       <p>Pick your house to be sorted a soup</p>
@@ -24,6 +31,7 @@ export default function Container() {
           <img className='house-imgs slytherin' src={slytherin} />
         </Link>
       </div>
+      <p className='quotes'>{`${quote.quote} - ${quote.by}`}</p>
     </div>
   )
 }
