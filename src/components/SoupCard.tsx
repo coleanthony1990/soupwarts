@@ -39,15 +39,15 @@ export default function SoupCard(props: CardProps) {
     getSoups(props.house)
       .then((data) => {
         const randomIndex = Math.floor(Math.random() * data.length);
-        setRandomSoup(data[randomIndex]);
+        const soup = data[randomIndex];
+        setRandomSoup(soup);
       })
       .catch((error) => setError(error.message));
-  }, []);
+  }, [props.house]);
 
   const listItems = (recipeSection: string) => {
-    let count = 0;
-    return recipeSection.split(/[.|]+/).map((item: string) => {
-      return <p key={item + '-' + count++}>{item}</p>;
+    return recipeSection.split(/[.|]+/).map((item: string, index) => {
+      return <p key={index}>{item}</p>;
     });
   };
 
@@ -75,7 +75,7 @@ export default function SoupCard(props: CardProps) {
       <article className="recipe-container">
         {error ? <ErrorPage error={error} /> : recipeCard}
         {randomSoup.title === '' && !error ? (
-          <img src={loadingGif} className="loading-icon" />
+          <img src={loadingGif} className="loading-icon" alt="Loading page" />
         ) : null}
       </article>
     </div>

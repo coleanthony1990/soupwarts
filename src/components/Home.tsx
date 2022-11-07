@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ravenclaw from '../assets/ravenclaw.jpeg';
 import gryffindor from '../assets/gryffindor.jpeg';
 import hufflepuff from '../assets/hufflepuff.jpeg';
@@ -11,9 +11,10 @@ type Quote = {
     id: number;
     quote: string;
     by: string;
-  }};
-  
-export default function Home({quote}: Quote) {
+  };
+};
+
+export default function Home({ quote }: Quote) {
   return (
     <div>
       <p>Pick your house to be sorted a soup</p>
@@ -47,7 +48,7 @@ export default function Home({quote}: Quote) {
           />
         </Link>
       </div>
-      <p className='quotes'>{`${quote.quote} - ${quote.by}`}</p>
+      <p className="quotes">{`${quote.quote} - ${quote.by}`}</p>
     </div>
   );
 }
