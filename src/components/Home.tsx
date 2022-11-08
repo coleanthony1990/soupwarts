@@ -1,21 +1,28 @@
-import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ravenclaw from '../assets/ravenclaw.jpeg';
 import gryffindor from '../assets/gryffindor.jpeg';
 import hufflepuff from '../assets/hufflepuff.jpeg';
 import slytherin from '../assets/slytherin.jpeg';
 import './Home.css';
+import quotes from '../assets/quotes.json';
 
 type Quote = {
-  quote: {
-    id: number;
-    quote: string;
-    by: string;
-  }};
-  
-export default function Home({quote}: Quote) {
+  id: number;
+  quote: string;
+  by: string;
+};
+
+export default function Home() {
+  const [quote, setQuote] = useState<Quote | null>(null);
+
+  useEffect(() => {
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    setQuote(randomQuote);
+  }, []);
+
   return (
-    <div>
+    <div className="home-page">
       <p>Pick your house to be sorted a soup</p>
       <div className="house-container">
         <Link to="/hufflepuff">
@@ -47,7 +54,9 @@ export default function Home({quote}: Quote) {
           />
         </Link>
       </div>
-      <p className='quotes'>{`${quote.quote} - ${quote.by}`}</p>
+      <div>
+        {quote && <p className="quotes">{`${quote.quote} - ${quote.by}`}</p>}
+      </div>
     </div>
   );
 }

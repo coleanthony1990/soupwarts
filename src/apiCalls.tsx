@@ -11,5 +11,14 @@ export const getSoups = async (house: string): Promise<Recipe[]> => {
     `https://api.api-ninjas.com/v1/recipe?query=${house}`,
     options
   );
-  return await response.json();
+  const data = await response.json();
+
+  return data.map(
+    (soup: {
+      ingredients: string;
+      instructions: string;
+      servings: string;
+      title: string;
+    }) => ({ ...soup, id: soup.title.split(' ').join('-') })
+  );
 };

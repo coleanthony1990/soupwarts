@@ -27,31 +27,26 @@ export const homeButton = (
 );
 
 export default function SoupCard(props: CardProps) {
-  const [randomSoup, setRandomSoup] = useState<Recipe>({
-    title: '',
-    ingredients: '',
-    servings: '',
-    instructions: '',
-  });
+  const [randomSoup, setRandomSoup] = useState<Recipe | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     getSoups(props.house)
       .then((data) => {
         const randomIndex = Math.floor(Math.random() * data.length);
-        setRandomSoup(data[randomIndex]);
+        const soup = data[randomIndex];
+        setRandomSoup(soup);
       })
       .catch((error) => setError(error.message));
-  }, []);
+  }, [props.house]);
 
   const listItems = (recipeSection: string) => {
-    let count = 0;
-    return recipeSection.split(/[.|]+/).map((item: string) => {
-      return <p key={item + '-' + count++}>{item}</p>;
+    return recipeSection.split(/[.|]+/).map((item: string, index) => {
+      return <p key={index}>{item}</p>;
     });
   };
 
-  const recipeCard = randomSoup.title !== '' && (
+  const recipeCard = randomSoup && (
     <div>
       <h2 className="recipe-title">{randomSoup.title}</h2>
       <p className="recipe-serving">Yields {randomSoup.servings}</p>
@@ -74,8 +69,8 @@ export default function SoupCard(props: CardProps) {
       <NavBar />
       <article className="recipe-container">
         {error ? <ErrorPage error={error} /> : recipeCard}
-        {randomSoup.title === '' && !error ? (
-          <img src={loadingGif} className="loading-icon" />
+        {randomSoup?.title === '' && !error ? (
+          <img src={loadingGif} className="loading-icon" alt="Loading page" />
         ) : null}
       </article>
     </div>
