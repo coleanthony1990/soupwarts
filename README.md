@@ -1,4 +1,6 @@
-# [Soupwarts](https://coleanthony1990.github.io/soupwarts/#/)
+# Soupwarts
+
+[Deployed Link](https://coleanthony1990.github.io/soupwarts/#/)
 
 ## Overview
 The students of Hogwarts are hungry, and they want soup. But alas! a Hufflepuff can't be caught eating a soup typed as Slytherin! Fear no more, wunderkids: Soupwarts is here to help. Upon selecting their house, users are generated a randomized soup recipe categorized according to their house. Users can navigate to different houses from their soup recipe's page (if they would like to see what their classmates are eating), and users can return to the main page once they are done.
